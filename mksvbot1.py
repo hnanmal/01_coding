@@ -48,5 +48,10 @@ async def update(ctx):
     await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다.")
     pass
 
+@client.command()
+async def 일정(ctx):
+    await ctx.send("오늘 일정은 아래와 같습니다.")
+    pass
+
 if __name__ == "__main__":
     client.run(sys.argv[1])
