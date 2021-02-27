@@ -1,4 +1,4 @@
 set /p TOKEN=<token
 
-python %~dp0main.py %TOKEN%
+python %~dp0mksvbot1.py %TOKEN%
 pause
