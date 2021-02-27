@@ -43,5 +43,10 @@ async def 팔벌려뛰기(ctx, count):
         await ctx.send("저는 마지막 구호를 싸지른 병신입니다! 처음부터 다시!...")
         await 팔벌려뛰기(ctx, count)
 
+@client.command()
+async def update(ctx):
+    await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다.")
+    pass
+
 if __name__ == "__main__":
     client.run(sys.argv[1])
