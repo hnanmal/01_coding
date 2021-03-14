@@ -3,6 +3,23 @@ import discord
 from discord.ext import commands
 import sys
 import random
+### for def 주가 ###
+import urllib.request
+from bs4 import BeautifulSoup
+import json
+from urllib import parse
+from collections import OrderedDict
+from datetime import datetime
+
+basic_url = "https://finance.naver.com/sise/"
+fp = urllib.request.urlopen(basic_url)
+source = fp.read()
+fp.close()
+soup = BeautifulSoup(source, 'html.parser')
+soup = soup.findAll("span",class_="num")
+kospi_value = soup[0].string
+kosdaq_value = soup[1].string
+### ###
 
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
@@ -51,6 +68,11 @@ async def update(ctx):
 @client.command()
 async def 일정(ctx):
     await ctx.send("오늘 일정은 아래와 같습니다.")
+    pass
+
+@client.command()
+async def 주가(ctx):
+    await ctx.send(f"오늘 Kospi는 {kospi_value} 입니다.")
     pass
 
 if __name__ == "__main__":
