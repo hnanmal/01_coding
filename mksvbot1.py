@@ -72,6 +72,7 @@ async def 일정(ctx):
 
 @client.command()
 async def 주가(ctx):
+    kospi_value = soup[0].string
     await ctx.send(f"오늘 Kospi는 {kospi_value} 입니다.")
     pass
 
