@@ -13,7 +13,7 @@ from collections import OrderedDict
 from datetime import datetime
 # } ###
 
-version = 0.2.5
+version = "0.2.5"
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
