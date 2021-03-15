@@ -13,6 +13,7 @@ from collections import OrderedDict
 from datetime import datetime
 # } ###
 
+version = 0.2.5
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
@@ -31,6 +32,10 @@ async def on_ready():
 async def order_list(ctx):
     await ctx.send("명령어는 아래와 같아요...")
     await ctx.send("...안녕 : 주인을 맞이하는 인사를 합니다.\n...쉬어 : 주인의 명을 받들어 잠시 대기합니다.\n...차려 : 긴장하며 오와 열을 맞춥니다.\n...팔벌려뛰기 : 명령어 다음 입력받은 횟수까지 팔벌려뛰기를 합니다.\n...업뎃 : 봇을 잠시 중지하고 업데이트 합니다.(구현중)\n...일정 : 구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다.(구현중)\n...주가 : 현재 코스피 지수를 메시지로 출력합니다.")
+
+@client.command(name="자기소개")
+async def hello(ctx):
+    await ctx.send(f"저는 mk님의 최초봇 svbot.1 이라고 합니다... \n현재 9개의 명령어 셋을 제공하고 있으며, 이 명령어들은 mk님의 편의와 유희를 위한 기능을 제공하고 있습니다...\n주인님은 ...로 명령어를 시작하며, 저는 대답을 ...로 종결하도록 프로그래밍 되었습니다.\nVersion = {version}...")
 
 @client.command(name="안녕")
 async def hello(ctx):
