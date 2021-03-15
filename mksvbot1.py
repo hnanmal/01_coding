@@ -60,11 +60,17 @@ async def wide_arm_jump(ctx, count):
         await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!!...")
         await asyncio.sleep(1.0)
         await wide_arm_jump(ctx, count)
+    else:
+        await ctx.send(f"흡..(속으로 {count_int}!)!!!...")
+        await asyncio.sleep(0.5)
+        await ctx.send("팔벌려뛰기 완료!!!...")
     # sleep(10.0)
 
 @client.command(name="업뎃")
 async def update(ctx):
-    await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다...")
+    await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 10초 뒤에 재시작합니다...")
+    await asyncio.sleep(15.0)
+    await ctx.send("재시작이 완료되었습니다...(구현중)")
     pass
 
 @client.command(name="일정")
