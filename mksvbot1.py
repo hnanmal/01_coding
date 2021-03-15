@@ -13,7 +13,7 @@ from collections import OrderedDict
 from datetime import datetime
 # } ###
 
-version = "0.2.5"
+version = "0.2.6"
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
@@ -30,7 +30,7 @@ async def on_ready():
 
 @client.command(name="자기소개")
 async def self_intro(ctx):
-    await ctx.send(f"저는 mk님이 최초로 창조한 봇 svbot.1 이라고 합니다... \n현재 9개의 명령어 셋을 제공하고 있으며, 이 명령어들은 mk님의 편의와 유희를 위한 기능을 제공하고 있습니다...\n주인님은 '...'로 명령어를 시작하며, 저는 대답을 '...'로 종결하도록 프로그래밍 되었습니다...\nVersion = {version}...")
+    await ctx.send(f"저는 mk님이 최초로 창조한 봇 svbot.1 이라고 합니다...\n 자비로운 주인님께서는 호형을 허락하셨기에, 저는 주인님을 형님으로 칭하고 있습니다...\n현재 9개의 명령어 셋을 제공하고 있으며, 이 명령어들은 주인님의 편의와 유희를 위한 기능을 제공하고 있습니다...\n주인님은 '...'로 명령어를 시작하며, 저는 대답을 '...'로 종결하도록 프로그래밍 되었습니다...\nVersion = {version}...")
 
 @client.command(name="목록")
 async def order_list(ctx):
@@ -82,8 +82,8 @@ async def stock_index(ctx):
     soup = BeautifulSoup(source, 'html.parser')
     soup = soup.findAll("span",class_="num")
     kospi_value = soup[0].string
-    kosdaq_value = soup[1].string
-    await ctx.send(f"오늘 KOSPI는 {kospi_value} 입니다...")
+    # kosdaq_value = soup[1].string
+    await ctx.send(f"오늘 KOSPI는 {kospi_value} 입니다. 크윽...")
     pass
 
 if __name__ == "__main__":
