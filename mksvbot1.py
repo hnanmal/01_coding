@@ -30,7 +30,7 @@ async def on_ready():
 @client.command(name="목록")
 async def order_list(ctx):
     await ctx.send("명령어는 아래와 같아요")
-    await ctx.send("...안녕\...쉬어\...차려\...팔벌려뛰기\...업뎃\...일정\...주가")
+    await ctx.send("...안녕\n...쉬어\n...차려\n...팔벌려뛰기\n...업뎃\n...일정\n...주가")
 
 @client.command(name="안녕")
 async def hello(ctx):
