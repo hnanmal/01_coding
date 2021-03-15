@@ -40,12 +40,16 @@ async def relax(ctx):
 async def Charyut(ctx):
     await ctx.send("차렷!...")
 
+async def sleep_await(time):
+    sleep(time)
+    return None
+
 @client.command(name="팔벌려뛰기")
 async def widearmjump(ctx, count):
     count_int = int(count)
     bIs_dude = random.randint(0,1)
     for i in range(count_int - 1 + bIs_dude):
-        sleep(5000.0)
+        sleep_await(5000.0)
         await ctx.send(f"{i+1}!")
     if bIs_dude == 1:
         await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!...")
