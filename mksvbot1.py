@@ -46,7 +46,7 @@ async def widearmjump(ctx, count):
     count_int = int(count)
     bIs_dude = random.randint(0,1)
     for i in range(count_int - 1 + bIs_dude):
-        asyncio.sleep(5000.0)
+        await asyncio.sleep(5000.0)
         await ctx.send(f"{i+1}!")
     if bIs_dude == 1:
         await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!...")
