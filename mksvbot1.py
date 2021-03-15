@@ -29,8 +29,8 @@ async def on_ready():
 
 @client.command(name="목록")
 async def order_list(ctx):
-    await ctx.send("명령어는 아래와 같아요")
-    await ctx.send("...안녕\n...쉬어\n...차려\n...팔벌려뛰기\n...업뎃\n...일정\n...주가")
+    await ctx.send("명령어는 아래와 같아요...")
+    await ctx.send("...안녕 : 주인을 맞이하는 인사를 합니다.\n...쉬어 : 주인의 명을 받들어 잠시 대기합니다.\n...차려 : 긴장하며 오와 열을 맞춥니다.\n...팔벌려뛰기 : 명령어 다음 입력받은 횟수까지 팔벌려뛰기를 합니다.\n...업뎃 : 봇을 잠시 중지하고 업데이트 합니다.(구현중)\n...일정 : 구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다.(구현중)\n...주가 : 현재 코스피 지수를 메시지로 출력합니다.")
 
 @client.command(name="안녕")
 async def hello(ctx):
@@ -60,7 +60,7 @@ async def wide_arm_jump(ctx, count):
 
 @client.command(name="업뎃")
 async def update(ctx):
-    await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다.")
+    await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다...")
     pass
 
 @client.command(name="일정")
