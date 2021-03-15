@@ -11,14 +11,7 @@ from urllib import parse
 from collections import OrderedDict
 from datetime import datetime
 
-basic_url = "https://finance.naver.com/sise/"
-fp = urllib.request.urlopen(basic_url)
-source = fp.read()
-fp.close()
-soup = BeautifulSoup(source, 'html.parser')
-soup = soup.findAll("span",class_="num")
-kospi_value = soup[0].string
-kosdaq_value = soup[1].string
+
 ### ###
 
 #client = discord.Client()
@@ -72,6 +65,14 @@ async def 일정(ctx):
 
 @client.command()
 async def 주가(ctx):
+    basic_url = "https://finance.naver.com/sise/"
+    fp = urllib.request.urlopen(basic_url)
+    source = fp.read()
+    fp.close()
+    soup = BeautifulSoup(source, 'html.parser')
+    soup = soup.findAll("span",class_="num")
+    kospi_value = soup[0].string
+    kosdaq_value = soup[1].string
     await ctx.send(f"오늘 Kospi는 {kospi_value} 입니다.")
     pass
 
