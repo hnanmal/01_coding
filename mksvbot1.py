@@ -30,17 +30,16 @@ async def on_ready():
 
 @client.command(name="자기소개")
 async def self_intro(ctx):
-    await ctx.send(f"저는 mk님이 최초로 창조한 봇 svbot.1 이라고 합니다...\n 자비로운 주인님께서는 호형을 허락하셨기에, 저는 주인님을 형님으로 칭하고 있습니다...\n현재 9개의 명령어 셋을 제공하고 있으며, 이 명령어들은 주인님의 편의와 유희를 위한 기능을 제공하고 있습니다...\n주인님은 '...'로 명령어를 시작하며, 저는 대답을 '...'로 종결하도록 프로그래밍 되었습니다...\nVersion = {version}...")
+    await ctx.send(f"저는 mk님이 최초로 창조한 봇 svbot.1 이라고 합니다...\n자비로운 주인님께서는 호형을 허락하셨기에, 저는 주인님을 형님으로 칭하고 있습니다...\n현재 10개의 명령어 셋을 제공하고 있으며, 이 명령어들은 주인님의 편의와 유희를 위한 기능을 제공하고 있습니다...\n주인님은 '...'로 명령어를 시작하며, 저는 대답을 '...'로 종결하도록 프로그래밍 되었습니다...\nVersion = {version}...")
 
 @client.command(name="목록")
 async def order_list(ctx):
     await ctx.send("명령어는 아래와 같아요...")
-    await ctx.send("...자기소개 : 봇의 정보를 간략히 소개합니다...\n...목록 : 봇에게 내릴 수 있는 명령어 목록을 출력합니다...\n...안녕 : 주인을 맞이하는 인사를 합니다...\n...쉬어 : 주인의 명을 받들어 잠시 대기합니다...\n...차려 : 긴장하며 오와 열을 맞춥니다...\n...팔벌려뛰기 : 명령어 다음 입력받은 횟수까지 팔벌려뛰기를 합니다...\n...업뎃 : 봇을 잠시 중지하고 업데이트 합니다...(구현중)\n...일정 : 구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다...(구현중)\n...주가 : 현재 코스피 지수를 메시지로 출력합니다...")
+    await ctx.send("...자기소개 : 봇의 정보를 간략히 소개합니다...\n...목록 : 봇에게 내릴 수 있는 명령어 목록을 출력합니다...\n...안녕 : 주인을 맞이하는 인사를 합니다...\n...쉬어 : 주인의 명을 받들어 잠시 대기합니다...\n...차려 : 긴장하며 오와 열을 맞춥니다...\n...팔벌려뛰기 : 명령어 다음 입력받은 횟수까지 팔벌려뛰기를 합니다...\n...업뎃 : 봇을 잠시 중지하고 업데이트 합니다...(구현중)\n...일정 : 구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다...(구현중)\n...주가 : 현재 코스피 지수를 메시지로 출력합니다...\n...우산 : 우산을 가져가야 하는지 기상청 정보 기준으로 메시지를 출력합니다...")
 
 @client.command(name="안녕")
 async def hello(ctx):
-    # print(type(ctx))
-    await ctx.send("형님. 잘 지내셨어요...")
+    await ctx.send("형님. 잘 지내셨어요?...")
 
 @client.command(name="쉬어")
 async def relax(ctx):
@@ -58,7 +57,7 @@ async def wide_arm_jump(ctx, count):
         await ctx.send(f"{i+1}!")
         await asyncio.sleep(1.0)
     if bIs_dude == 1:
-        await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!...")
+        await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!!...")
         await asyncio.sleep(1.0)
         await wide_arm_jump(ctx, count)
     # sleep(10.0)
@@ -82,8 +81,13 @@ async def stock_index(ctx):
     soup = BeautifulSoup(source, 'html.parser')
     soup = soup.findAll("span",class_="num")
     kospi_value = soup[0].string
-    # kosdaq_value = soup[1].string
-    await ctx.send(f"오늘 KOSPI는 {kospi_value} 입니다. 크윽...")
+    kosdaq_value = soup[1].string
+    await ctx.send(f"오늘 KOSPI는 {kospi_value} 이고,\nKOSDAQ은 {kosdaq_value}입니다...")
+    pass
+
+@client.command(name="우산")
+async def umbrella_judge(ctx):
+    await ctx.send("우산 가져가세요!...(구현중)")
     pass
 
 if __name__ == "__main__":
