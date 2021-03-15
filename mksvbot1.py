@@ -50,6 +50,7 @@ async def widearmjump(ctx, count):
         await asyncio.sleep(1.0)
     if bIs_dude == 1:
         await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!...")
+        await asyncio.sleep(1.0)
         await widearmjump(ctx, count)
     # sleep(10.0)
 
