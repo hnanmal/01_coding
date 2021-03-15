@@ -4,7 +4,7 @@ import discord
 from discord.ext import commands
 import sys
 import random
-### for def 주가 { #
+### for def stock_index { #
 import urllib.request
 from bs4 import BeautifulSoup
 import json
@@ -25,8 +25,12 @@ async def on_ready():
 
     for guild in client.guilds:
         for channel in guild.text_channels:
-            await channel.send(f"{channel.name}채널이 준비되었습니다...")
+            await channel.send(f"{channel.name}채널이 준비가 되었습니다...")
 
+@client.command(name="목록")
+async def order_list(ctx):
+    await ctx.send("명령어는 아래와 같아요")
+    await ctx.send("...안녕\...쉬어\...차려\...팔벌려뛰기\...업뎃\...일정\...주가")
 
 @client.command(name="안녕")
 async def hello(ctx):
@@ -42,7 +46,7 @@ async def Charyut(ctx):
     await ctx.send("차렷!...")
 
 @client.command(name="팔벌려뛰기")
-async def widearmjump(ctx, count):
+async def wide_arm_jump(ctx, count):
     count_int = int(count)
     bIs_dude = random.randint(0,1)
     for i in range(count_int - 1 + bIs_dude):
@@ -51,10 +55,10 @@ async def widearmjump(ctx, count):
     if bIs_dude == 1:
         await ctx.send("정신을 못차렸는지 마지막 구호를 외쳤습니다;; 처음부터 다시!...")
         await asyncio.sleep(1.0)
-        await widearmjump(ctx, count)
+        await wide_arm_jump(ctx, count)
     # sleep(10.0)
 
-@client.command()
+@client.command(name="업뎃")
 async def update(ctx):
     await ctx.send("업데이트를 시작합니다. 5초 뒤에 봇이 종료되고 30초 뒤에 재시작합니다.")
     pass
@@ -74,7 +78,7 @@ async def stock_index(ctx):
     soup = soup.findAll("span",class_="num")
     kospi_value = soup[0].string
     kosdaq_value = soup[1].string
-    await ctx.send(f"오늘 Kospi는 {kospi_value} 입니다.")
+    await ctx.send(f"오늘 KOSPI는 {kospi_value} 입니다...")
     pass
 
 if __name__ == "__main__":
