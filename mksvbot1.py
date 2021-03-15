@@ -75,7 +75,7 @@ async def update(ctx):
 
 @client.command(name="일정")
 async def schedule(ctx):
-    await ctx.send("오늘 일정은 아래와 같습니다...")
+    await ctx.send("오늘 일정은 아래와 같습니다...(구현중)")
     pass
 
 @client.command(name="주가")
