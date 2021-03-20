@@ -90,8 +90,8 @@ async def stock_index(ctx):
     kosdaq_value = soup[1].string
     # await ctx.send(f"현재 KOSPI는 {kospi_value} 이고,\n현재 KOSDAQ은 {kosdaq_value}입니다...")
     embed_mk = discord.Embed(title="주가 지수", description="현재의 주가 지수를 출력합니다.", color=0x62c1cc)
-    embed_mk.add_field(name="KOSPI", value=f"{kospi_value}", inline=True)
-    embed_mk.add_field(name="KOSDAQ", value=f"{kosdaq_value}", inline=True)
+    embed_mk.add_field(name="KOSPI", value=f"'{kospi_value}'", inline=True)
+    embed_mk.add_field(name="KOSDAQ", value=f"'{kosdaq_value}'", inline=True)
     await ctx.send(embed=embed_mk)
     pass
 
