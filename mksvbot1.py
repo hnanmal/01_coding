@@ -46,7 +46,7 @@ async def order_list(ctx):
     embd_si.add_field(name="*...업뎃*", value="`봇을 잠시 중지하고 업데이트 합니다...(구현중)`", inline=False)
     embd_si.add_field(name="*...일정*", value="`구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다...(구현중)`", inline=False)
     embd_si.add_field(name="*...주가*", value="`현재 주가 지수를 메시지로 출력합니다...`", inline=False)
-    embd_si.add_field(name="*...날씨*", value="`날씨정보를 네이버 검색 기준으로 메시지를 출력합니다...(구현중)`", inline=False)
+    embd_si.add_field(name="*...날씨*", value="`날씨정보를 네이버 검색 기준으로 메시지를 출력합니다...`", inline=False)
     await ctx.send(embed=embd_si)
 
 @client.command(name="안녕")
@@ -108,9 +108,10 @@ async def stock_index(ctx):
     pass
 
 @client.command(name="날씨")
-async def weather(ctx):
+async def weather(ctx, loc):
     # await ctx.send("우산 가져가세요!...(구현중)")
-    basic_url = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%84%9C%EC%9A%B8+%EB%82%A0%EC%94%A8&oquery=%EB%94%94%EC%8A%A4%EC%BD%94%EB%93%9C%EB%B4%87+%EB%82%A0%EC%94%A8&tqi=haNS5wprvmsssCRdJFdssssssON-451531"
+    loc_str = str(loc)
+    basic_url = f"https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query={loc_str}+날씨"
     fp = urllib.request.urlopen(basic_url)
     source = fp.read()
     fp.close()
