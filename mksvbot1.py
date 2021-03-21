@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+#-*-coding: utf-8-*-
 import asyncio
 from asyncio.tasks import sleep
 import discord
@@ -110,7 +110,7 @@ async def stock_index(ctx):
 
 @client.command(name="날씨")
 async def weather(ctx, input):
-    loc = input.decode('cp949').encode('utf-8')
+    loc = input
     basic_url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+" + loc
     fp = urllib.request.urlopen(basic_url)
     source = fp.read()
