@@ -119,8 +119,8 @@ async def weather(ctx):
     soup_num = soup.findAll("span",class_="num")
     crnt_temp = soup_tmp[0].string
     # soup_rain = soup.findAll("span",class_="rainfall")
-    crnt_sensible = soup_num[0].string
-    crnt_rainfall = soup_num[1].string
+    crnt_sensible = soup_num[2].string
+    crnt_rainfall = soup_num[3].string
     embd_wetr = discord.Embed(title="**날씨...**", description="현재의 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wetr.add_field(name="현재 기온", value=f"`{crnt_temp} ℃`", inline=False)
     embd_wetr.add_field(name="체감 온도", value=f"`{crnt_sensible} ℃`", inline=False)
