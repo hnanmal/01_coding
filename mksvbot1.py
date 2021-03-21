@@ -109,7 +109,7 @@ async def stock_index(ctx):
     pass
 
 @client.command(name="날씨")
-async def weather(ctx, *input):
+async def weather(ctx, input):
     loc = str(input.encode())
     basic_url = f"https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+{loc}"
     fp = urllib.request.urlopen(basic_url)
