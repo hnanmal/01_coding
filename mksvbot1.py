@@ -111,7 +111,7 @@ async def stock_index(ctx):
 
 @client.command(name="날씨")
 async def weather(ctx, input):
-    defaultUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+'
+    defaultUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EB%82%A0%EC%94%A8+'
     plusUrl = str(input)
     basic_url = str(defaultUrl) + str(quote_plus(plusUrl))
     print(basic_url)
