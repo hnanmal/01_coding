@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import asyncio
 from asyncio.tasks import sleep
 import discord
@@ -46,7 +47,7 @@ async def order_list(ctx):
     embd_si.add_field(name="*...업뎃*", value="`봇을 잠시 중지하고 업데이트 합니다...(구현중)`", inline=False)
     embd_si.add_field(name="*...일정*", value="`구글캘린더에 저장된 오늘의 일정을 메시지로 출력합니다...(구현중)`", inline=False)
     embd_si.add_field(name="*...주가*", value="`현재 주가 지수를 메시지로 출력합니다...`", inline=False)
-    embd_si.add_field(name="*...날씨*", value="`날씨정보를 네이버 검색 기준으로 메시지를 출력합니다...`", inline=False)
+    embd_si.add_field(name="*...날씨*", value="`날씨정보를 네이버 검색 기준으로 메시지를 출력합니다. 명령어 뒤에 한칸 띄고 지역명을 입력하세요...`", inline=False)
     await ctx.send(embed=embd_si)
 
 @client.command(name="안녕")
@@ -108,9 +109,9 @@ async def stock_index(ctx):
     pass
 
 @client.command(name="날씨")
-async def weather(ctx):
-    # loc_str = str(loc)
-    basic_url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%84%9C%EC%9A%B8+%EB%82%A0%EC%94%A8"
+async def weather(ctx, input):
+    loc = str(input)
+    basic_url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+" + loc
     fp = urllib.request.urlopen(basic_url)
     source = fp.read()
     fp.close()
@@ -118,7 +119,6 @@ async def weather(ctx):
     soup_tmp = soup.findAll("span",class_="todaytemp")
     soup_num = soup.findAll("span",class_="num")
     crnt_temp = soup_tmp[0].string
-    # soup_rain = soup.findAll("span",class_="rainfall")
     crnt_sensible = soup_num[2].string
     crnt_rainfall = soup_num[3].string
     embd_wetr = discord.Embed(title="**날씨...**", description="현재의 날씨 정보를 출력합니다...", color=0x62c1cc)
