@@ -10,6 +10,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 import json
 from urllib import parse
+from urllib.parse import quote_plus
 from collections import OrderedDict
 from datetime import datetime
 # } ###
@@ -112,8 +113,8 @@ async def stock_index(ctx):
 async def weather(ctx, input):
     loc = input
     defaulUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+'
-    plusUrl = str(input)
-    basic_url = defaulUrl + parse.quote_plus(plusUrl)
+    plusUrl = input
+    basic_url = defaulUrl + quote_plus(plusUrl)
     fp = urllib.request.urlopen(basic_url)
     source = fp.read()
     fp.close()
