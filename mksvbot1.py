@@ -5,7 +5,6 @@ import discord
 from discord.ext import commands
 import sys
 import random
-### for def stock_index { #
 import urllib.request
 from bs4 import BeautifulSoup
 import json
@@ -13,7 +12,6 @@ from urllib import parse
 from urllib.parse import quote_plus
 from collections import OrderedDict
 from datetime import datetime
-# } ###
 
 version = "0.3.0"
 #client = discord.Client()
