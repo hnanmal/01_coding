@@ -123,7 +123,7 @@ async def weather(ctx, input):
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
     crnt_rainfall = soup_num[3].string
-    embd_wetr = discord.Embed(title="**날씨...**", description="현재의 날씨 정보를 출력합니다...", color=0x62c1cc)
+    embd_wetr = discord.Embed(title=f"**현재 {input}의 날씨는...**", description="해당 지역의 현재 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wetr.add_field(name="현재 기온", value=f"`{crnt_temp} ℃`", inline=True)
     embd_wetr.add_field(name="체감 온도", value=f"`{crnt_sensible} ℃`", inline=True)
     embd_wetr.add_field(name="시간당 강수량", value=f"`{crnt_rainfall} mm/hr`", inline=False)
