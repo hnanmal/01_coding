@@ -113,8 +113,8 @@ async def stock_index(ctx):
 async def weather(ctx, input):
     defaulUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+'
     plusUrl = str(input)
-    print(plusUrl)
-    # basic_url = defaulUrl + quote_plus(plusUrl)
+    basic_url = defaulUrl + quote_plus(plusUrl)
+    print(quote_plus(plusUrl))
     # fp = urllib.request.urlopen(basic_url)
     # source = fp.read()
     # fp.close()
