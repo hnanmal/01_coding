@@ -110,24 +110,25 @@ async def stock_index(ctx):
 
 @client.command(name="날씨")
 async def weather(ctx, input):
-    loc = str(input.encode())
-    print(loc)
-    # basic_url = f"https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+{loc}"
-    # fp = urllib.request.urlopen(basic_url)
-    # source = fp.read()
-    # fp.close()
-    # soup = BeautifulSoup(source, 'html.parser')
-    # soup_tmp = soup.findAll("span",class_="todaytemp")
-    # soup_num = soup.findAll("span",class_="num")
-    # crnt_temp = soup_tmp[0].string
-    # crnt_sensible = soup_num[2].string
-    # crnt_rainfall = soup_num[3].string
-    # embd_wetr = discord.Embed(title="**날씨...**", description="현재의 날씨 정보를 출력합니다...", color=0x62c1cc)
-    # embd_wetr.add_field(name="현재 기온", value=f"`{crnt_temp} ℃`", inline=True)
-    # embd_wetr.add_field(name="체감 온도", value=f"`{crnt_sensible} ℃`", inline=True)
-    # embd_wetr.add_field(name="시간당 강수량", value=f"`{crnt_rainfall} mm/hr`", inline=False)
-    # await ctx.send(embed=embd_wetr)
-    # pass
+    loc = input
+    defaulUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%%EB%82%A0%EC%94%A8+'
+    plusUrl = str(input)
+    basic_url = defaulUrl + parse.quote_plus(plusUrl)
+    fp = urllib.request.urlopen(basic_url)
+    source = fp.read()
+    fp.close()
+    soup = BeautifulSoup(source, 'html.parser')
+    soup_tmp = soup.findAll("span",class_="todaytemp")
+    soup_num = soup.findAll("span",class_="num")
+    crnt_temp = soup_tmp[0].string
+    crnt_sensible = soup_num[2].string
+    crnt_rainfall = soup_num[3].string
+    embd_wetr = discord.Embed(title="**날씨...**", description="현재의 날씨 정보를 출력합니다...", color=0x62c1cc)
+    embd_wetr.add_field(name="현재 기온", value=f"`{crnt_temp} ℃`", inline=True)
+    embd_wetr.add_field(name="체감 온도", value=f"`{crnt_sensible} ℃`", inline=True)
+    embd_wetr.add_field(name="시간당 강수량", value=f"`{crnt_rainfall} mm/hr`", inline=False)
+    await ctx.send(embed=embd_wetr)
+    pass
 
 if __name__ == "__main__":
     client.run(sys.argv[1])
