@@ -118,7 +118,7 @@ async def weather(ctx, input):
     soup = BeautifulSoup(source, 'html.parser')
     soup_tmp = soup.findAll("span",class_="todaytemp")
     soup_num = soup.findAll("span",class_="num")
-    soup_addinfo = soup.findAll("span",class_="lv3")
+    # soup_addinfo = soup.findAll("span",class_="lv3")
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
     crnt_info = soup_num[3].string
@@ -126,7 +126,7 @@ async def weather(ctx, input):
     embd_wtr = discord.Embed(title=f"**현재 {input}의 날씨는...**", description="해당 지역의 현재 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wtr.add_field(name="`현재 기온`", value=f"`{crnt_temp} ℃`", inline=True)
     embd_wtr.add_field(name="`체감 온도`", value=f"`{crnt_sensible} ℃`", inline=True)
-    embd_wtr.add_field(name=f"현재 정보", value=f"`{crnt_info} {crnt_addinfo}`", inline=False)
+    embd_wtr.add_field(name=f"`현재 정보`", value=f"`{crnt_info}`", inline=False)
     await ctx.send(embed=embd_wtr)
     pass
 
