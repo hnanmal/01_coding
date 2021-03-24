@@ -118,17 +118,20 @@ async def weather(ctx, input):
     soup = BeautifulSoup(source, 'html.parser')
     soup_tmp = soup.findAll("span",class_="todaytemp")
     soup_num = soup.findAll("span",class_="num")
-    # soup_addinfo = soup.findAll("span",class_="lv3")
+    soup_uv = soup.findAll("span",class_="lv3")
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
-    crnt_info = soup_num[3].string
+    crnt_uv = soup_uv[0].text
+    crnt_dust = soup_num[5].string
+    crnt_dustMicro = soup_num[6].string
     # crnt_addinfo = soup_addinfo[0]
     embd_wtr = discord.Embed(title=f"**현재 {input}의 날씨는...**", description="해당 지역의 현재 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wtr.add_field(name="**현재 기온**", value=f"`{crnt_temp} ℃`", inline=True)
     embd_wtr.add_field(name="**체감 온도**", value=f"`{crnt_sensible} ℃`", inline=True)
-    embd_wtr.add_field(name=f"**현재 정보**", value=f"`{crnt_info}`", inline=False)
+    embd_wtr.add_field(name=f"**현재 자외선**", value=f"`{crnt_uv}`", inline=False)
+    embd_wtr.add_field(name=f"**미세먼지**", value=f"`{crnt_dust}`", inline=True)
+    embd_wtr.add_field(name=f"**초미세먼지**", value=f"`{crnt_dustMicro}`", inline=True)
     await ctx.send(embed=embd_wtr)
-    pass
 
 if __name__ == "__main__":
     client.run(sys.argv[1])
