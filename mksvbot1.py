@@ -12,6 +12,38 @@ from urllib import parse
 from urllib.parse import quote_plus
 from collections import OrderedDict
 from datetime import datetime
+# # google calendar
+# from __future__ import print_function
+# import httplib2
+# import googleapiclient.discovery as discovery
+# from oauth2client.client import flow_from_clientsecrets
+# from oauth2client.file import Storage
+# from oauth2client.tools import run_flow
+
+# CLIENT_SECRET ='astute-purpose-308615-7415464c1358.json'
+# SCOPE = 'https://www.googleapis.com/auth/calendar'
+
+# class GCalendar:
+#     KST = datetime.timezone(datetime.timedelta(hours=9))
+
+#     def __init__(self, storage_name):
+#         self.storage_name = storage_name
+#         self.storage = Storage(storage_name)
+
+#     def build_service(self):
+#         # Fetch credentials from storage
+#         credentials = self.storage.get()
+
+#         # If the credentials doesn's exist in the storage location then run the flow
+#         if credentials is None or credentials.invalid:
+#             flow = flow_from_clientsecrets(CLIENT_SECRET, scope=SCOPE)
+#             http = httplib2.Http()
+#             credentials = run_flow(flow, self.storage, http=http)
+
+#         http = credentials.authorize(httplib2.http())
+#         self.service = discovery.build('calendar', 'v3', http=http)
+
+
 
 version = "0.3.0"
 #client = discord.Client()
@@ -128,7 +160,7 @@ async def weather(ctx, input):
     embd_wtr = discord.Embed(title=f"**현재 {input}의 날씨는...**", description="해당 지역의 현재 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wtr.add_field(name="**현재 기온**", value=f"`{crnt_temp} ℃`", inline=True)
     embd_wtr.add_field(name="**체감 온도**", value=f"`{crnt_sensible} ℃`", inline=True)
-    embd_wtr.add_field(name=f"**현재 자외선**", value=f"`{crnt_uv}`", inline=False)
+    embd_wtr.add_field(name=f"**자외선**", value=f"`{crnt_uv}`", inline=False)
     embd_wtr.add_field(name=f"**미세먼지**", value=f"`{crnt_dust}`", inline=True)
     embd_wtr.add_field(name=f"**초미세먼지**", value=f"`{crnt_dustMicro}`", inline=True)
     await ctx.send(embed=embd_wtr)
