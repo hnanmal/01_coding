@@ -3,10 +3,11 @@ from __future__ import print_function
 import httplib2
 import googleapiclient.discovery as discovery
 from pytz import timezone
-import datetime
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import run_flow
+# from google_calendar_api import GCalendar
+import datetime
 
 import asyncio
 from asyncio.tasks import sleep
@@ -20,7 +21,7 @@ import json
 from urllib import parse
 from urllib.parse import quote_plus
 from collections import OrderedDict
-from datetime import datetime
+from datetime import datetime, tzinfo
 
 # input = '둔촌동'
 
@@ -106,7 +107,7 @@ def insert_event(self, calendar_id, event_name, start, end):
         'start': {
             'dateTime': start,
             'timeZone': 'Asia/Seoul',            
-        }
+        },
         'end': {
             'dateTime': end,
             'timeZone': 'Asia/Seoul',
@@ -117,3 +118,14 @@ def insert_event(self, calendar_id, event_name, start, end):
 
 def delete_event(self, calendar_id, event_id):
     return self.service.events().delete(calendarId=calendar_id, eventId=event_id).execute()
+
+calendar = GCalendar("Calendar.storage")
+calendar.build_service()
+calendar_id = calendar.get_calendar_id(CALENDAR_HOLIDAY)
+
+today = datetime.date.today()
+start = datetime.datetime(today .year, today .month, today .day, 0, 0, 0, tzinfo=GCalendar.KST)
+end = start + datetime.timedelta(days=1)
+events = calendar.get_events(calendar_id, start.isoformat(), end.isoformat())
+for event in events:
+    print(event["summary"])
