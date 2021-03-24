@@ -118,7 +118,7 @@ async def weather(ctx, input):
     soup = BeautifulSoup(source, 'html.parser')
     soup_tmp = soup.findAll("span",class_="todaytemp")
     soup_num = soup.findAll("span",class_="num")
-    soup_uv = soup.findAll("span",class_="lv3")
+    soup_uv = soup.findAll("span",class_="indicator")
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
     crnt_uv = soup_uv[0].text
