@@ -2,3 +2,12 @@ C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.csproj
 C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.AssemblyInfoInputs.cache
 C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.AssemblyInfo.cs
 C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.csproj.CoreCompileInputs.cache
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.exe
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.deps.json
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.runtimeconfig.json
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.runtimeconfig.dev.json
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.dll
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\bin\Debug\netcoreapp3.1\cspjt.pdb
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.dll
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.pdb
+C:\Users\pjmk0\Downloads\MK\01_coding\cspjt\obj\Debug\netcoreapp3.1\cspjt.genruntimeconfig.cache
