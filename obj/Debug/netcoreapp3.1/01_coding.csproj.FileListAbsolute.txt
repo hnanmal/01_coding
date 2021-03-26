@@ -1,0 +1,4 @@
+C:\Users\pjmk0\Downloads\MK\01_coding\obj\Debug\netcoreapp3.1\01_coding.csprojAssemblyReference.cache
+C:\Users\pjmk0\Downloads\MK\01_coding\obj\Debug\netcoreapp3.1\01_coding.AssemblyInfoInputs.cache
+C:\Users\pjmk0\Downloads\MK\01_coding\obj\Debug\netcoreapp3.1\01_coding.AssemblyInfo.cs
+C:\Users\pjmk0\Downloads\MK\01_coding\obj\Debug\netcoreapp3.1\01_coding.csproj.CoreCompileInputs.cache
