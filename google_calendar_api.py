@@ -6,20 +6,6 @@ from pytz import timezone
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import run_flow
-
-
-# import asyncio
-# from asyncio.tasks import sleep
-# import discord
-# from discord.ext import commands
-# import sys
-# import random
-# import urllib.request
-# from bs4 import BeautifulSoup
-# import json
-# from urllib import parse
-# from urllib.parse import quote_plus
-# from collections import OrderedDict
 from datetime import datetime, timezone, timedelta
 
 
@@ -78,4 +64,3 @@ class GCalendar:
 
     def delete_event(self, calendar_id, event_id):
         return self.service.events().delete(calendarId=calendar_id, eventId=event_id).execute()
-        
