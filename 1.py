@@ -14,7 +14,7 @@ from collections import OrderedDict
 from datetime import datetime
 
 defaultUrl = 'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query='
-plusUrl = str("미성동") + '날씨'
+plusUrl = str("서울") + '날씨'
 basic_url = str(defaultUrl) + str(quote_plus(plusUrl))
 fp = urllib.request.urlopen(str(basic_url))
 source = fp.read()
@@ -22,21 +22,22 @@ fp.close()
 soup = BeautifulSoup(source, 'html.parser')
 soup_tmp = soup.findAll("span",class_="todaytemp")
 soup_num = soup.findAll("span",class_="num")
-soup_uv = soup.findAll("span",class_="indicator")
+soup_forIndic = soup.findAll("span",class_="indicator")
 soup_rain = soup.findAll("span",class_="rainfall")
-soup_lv2 = soup.findAll("dd",class_="lv2")
-soup_lv1 = soup.findAll("dd",class_="lv1")
+soup_forDust = soup.findAll("dd",class_="lv1")
+soup_forMdust = soup.findAll("dd",class_="lv1")
+soup_detail = soup.findAll("div",class_="detail_box")
+
 crnt_temp = soup_tmp[0].string
 crnt_sensible = soup_num[2].string
 crnt_rain = soup_rain[0].text
-# crnt_uv = soup_uv[0].text
-crnt_dust = soup_lv2[0].text
-crnt_dustMicro = soup_lv1[0].text
-
+crnt_dust = soup_num[4].text
+crnt_dustMicro = soup_num[5].text
+crnt_detail = soup_detail[0].text
 
 print(crnt_rain)
 print(crnt_dust)
-print(crnt_dustMicro)
+print(crnt_xx)
 
 
 # from google_calendar_api import GCalendar
