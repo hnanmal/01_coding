@@ -12,8 +12,8 @@ from urllib import parse
 from urllib.parse import quote_plus
 from collections import OrderedDict
 # # google calendar
-from google_calendar_api import GCalendar
-import datetime
+# from google_calendar_api import GCalendar
+# import datetime
 # # google calendar
 
 version = "0.3.6"
