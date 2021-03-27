@@ -155,15 +155,15 @@ async def weather(ctx, input):
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
     crnt_rain = soup_rain[0].text
-    crnt_uv = soup_uv[0].text
-    crnt_dust = soup_num[5].string
-    crnt_dustMicro = soup_num[6].string
+    # crnt_uv = soup_uv[0].text
+    crnt_dust = soup_lv2[0].text
+    crnt_dustMicro = soup_lv2[1].text
     # crnt_addinfo = soup_addinfo[0]
     embd_wtr = discord.Embed(title=f"**현재 {input}의 날씨는...**", description="해당 지역의 현재 날씨 정보를 출력합니다...", color=0x62c1cc)
     embd_wtr.add_field(name="**현재 기온**", value=f"`{crnt_temp} ℃`", inline=True)
     embd_wtr.add_field(name="**체감 온도**", value=f"`{crnt_sensible} ℃`", inline=True)
-    embd_wtr.add_field(name="**강수현황**", value=f"`{crnt_rain}", inline=False)
-    embd_wtr.add_field(name="**자외선**", value=f"`{crnt_uv}`", inline=False)
+    embd_wtr.add_field(name="**강수현황**", value=f"`{crnt_rain}`", inline=False)
+    # embd_wtr.add_field(name="**자외선**", value=f"`{crnt_uv}`", inline=False)
     embd_wtr.add_field(name="**미세먼지**", value=f"`{crnt_dust}`", inline=True)
     embd_wtr.add_field(name="**초미세먼지**", value=f"`{crnt_dustMicro}`", inline=True)
     await ctx.send(embed=embd_wtr)
