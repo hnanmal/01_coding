@@ -34,11 +34,17 @@ crnt_rain = soup_rain[0].text
 crnt_dust = soup_num[4].text
 crnt_dustMicro = soup_num[5].text
 crnt_detail = soup_detail[0].text
+crnt_detail_str = crnt_detail.split(" ")
+detail_1 = crnt_detail_str[2]+ " " + crnt_detail_str[3]
+detail_2 = crnt_detail_str[4]+ " " + crnt_detail_str[5]
+detail_3 = crnt_detail_str[6]+ " " + crnt_detail_str[7]
 
 print(crnt_rain)
-print(crnt_dust)
-print(crnt_xx)
-
+# print(crnt_dust)
+# print(crnt_detail)
+print(detail_1)
+print(detail_2)
+print(detail_3)
 
 # from google_calendar_api import GCalendar
 # import datetime
