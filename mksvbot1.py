@@ -152,6 +152,7 @@ async def weather(ctx, input):
     soup_num = soup.findAll("span",class_="num")
     soup_uv = soup.findAll("span",class_="indicator")
     soup_rain = soup.findAll("span",class_="rainfall")
+    soup_lv2 = soup.findAll("dd",class_="lv2")
     crnt_temp = soup_tmp[0].string
     crnt_sensible = soup_num[2].string
     crnt_rain = soup_rain[0].text
