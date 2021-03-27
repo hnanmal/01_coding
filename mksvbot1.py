@@ -62,7 +62,7 @@ async def relax(ctx):
 
 @client.command(name="ㅈ같냐?")
 async def relax(ctx):
-    embed_anoy = discord.Embed(title=, description="하...", color=0x62c1cc)
+    embed_anoy = discord.Embed(title="", description="하...", color=0x62c1cc)
     embed_anoy.set_image(url="https://i.imgur.com/kT3fZtJ.png")
 
     await ctx.send(embed=embed_anoy)
