@@ -16,7 +16,7 @@ from collections import OrderedDict
 # import datetime
 # # google calendar
 
-version = "0.3.6"
+version = "0.3.7"
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
@@ -44,6 +44,7 @@ async def order_list(ctx):
     embd_ol.add_field(name="*...목록*", value="`봇에게 내릴 수 있는 명령어 목록을 출력합니다...`", inline=False)
     embd_ol.add_field(name="*...안녕*", value="`주인을 맞이하는 인사를 합니다...`", inline=False)
     embd_ol.add_field(name="*...쉬어*", value="`주인의 명을 받들어 잠시 대기합니다...`", inline=False)
+    embd_ol.add_field(name="*...ㅈ같냐?*", value="`한숨을 쉬고 의견을 피력합니다...`", inline=False)
     embd_ol.add_field(name="*...차려*", value="`긴장하며 오와 열을 맞춥니다...`", inline=False)
     embd_ol.add_field(name="*...팔벌려뛰기*", value="`입력받은 횟수까지 팔벌려뛰기를 합니다. 마지막 구호를 외칠 시 재수행 합니다...`", inline=False)
     embd_ol.add_field(name="*...업뎃*", value="`봇을 잠시 중지하고 업데이트 합니다...(구현중)`", inline=False)
