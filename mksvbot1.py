@@ -159,7 +159,7 @@ async def weather(ctx, input):
     embd_wtr.add_field(name="**체감 온도**", value=f"`{crnt_sensible} ℃`", inline=True)
     embd_wtr.add_field(name="**강수 현황**", value=f"`{crnt_rain}`", inline=False)
     embd_wtr.add_field(name="**자외선 현황**", value=f"`{crnt_uv}`", inline=True)
-    embd_wtr.add_field(name="**부가정보**", value=f"`{detail_1}`\n`{detail_2}`\n`{detail_3}`", inline=True)
+    embd_wtr.add_field(name="**부가정보**", value=f"`{detail_1}`\n`{detail_2}`\n`{detail_3}`", inline=False)
     await ctx.send(embed=embd_wtr)
 
 if __name__ == "__main__":
