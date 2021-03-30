@@ -16,7 +16,7 @@ from collections import OrderedDict
 # import datetime
 # # google calendar
 
-version = "0.3.7"
+version = "0.3.8"
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
