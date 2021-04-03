@@ -1,22 +1,22 @@
 #-*-coding: utf-8-*-
 import asyncio
-from asyncio.tasks import sleep
+# from asyncio.tasks import sleep
 import discord
 from discord.ext import commands
 import sys
 import random
 import urllib.request
 from bs4 import BeautifulSoup
-import json
-from urllib import parse
+# import json
+# from urllib import parse
 from urllib.parse import quote_plus
-from collections import OrderedDict
+# from collections import OrderedDict
 # # google calendar
 # from google_calendar_api import GCalendar
 # import datetime
 # # google calendar
 
-version = "0.3.8"
+version = "0.3.9"
 #client = discord.Client()
 client = commands.Bot(command_prefix='...')
 
@@ -142,13 +142,13 @@ async def weather(ctx, input):
     else:
         soup_rain = soup.findAll("span",class_="rainfall")
         crnt_rain = soup_rain[0].text
-    
+
     if len(soup.findAll("span",class_="indicator")) == 0:
         crnt_uv = "None"
     else:
         soup_uv = soup.findAll("span",class_="indicator")
         crnt_uv = soup_uv[0].text
-    
+
     crnt_detail = soup_detail[0].text
     crnt_detail_str = crnt_detail.split(" ")
     detail_1 = crnt_detail_str[2]+ " " + crnt_detail_str[3]
