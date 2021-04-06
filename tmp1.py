@@ -1,24 +1,20 @@
-# def hello(count):
-#     if count == 0:    # 종료 조건을 만듦. count가 0이면 다시 hello 함수를 호출하지 않고 끝냄
-#         return
-#     else:
-#         print('Hello, world!', count)
-    
-#         count -= 1      # count를 1 감소시킨 뒤
-#         hello(count)    # 다시 hello에 넣음
- 
-# hello(50)    # hello 함수 호출
+# def map(f, list):
+#     for a in list:
+#         yield f(a)
+
+# def f(list, length):
+#     i = 0
+#     acc = 0
+#     for a in map(a**2, filter(a%2, list)):
+#         acc = acc + a
+#         if ++i == length:
+#             break
 
 
-def main():
-    num = int(input("자연수를 입력해 주세요.\n"))
-    fact = factorial(num)
-    print("자연수",num,"의 계승은",fact)
+# def main():
+#     f([1,2,3,4,5], 3)
 
-def factorial(num):
-    if num == 0:
-        return 1
-    else:
-        return num * factorial(num - 1)
+# print(main())
 
-main()
+my_gen = (x for x in range(1, 11) if x % 2 == 0)
+print(list(my_gen))
