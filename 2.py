@@ -48,6 +48,7 @@ class prac:
         self.index = self.index-1
         return self.data[self.index]
 
+
 a = prac('myData')
 
 for char in a:
@@ -56,10 +57,13 @@ print("-"*30)
 
 
 def reverse(data):
-    for index in range(len(data)-1,-1,-1):
+    for index in range(len(data)-1, -1, -1):
         yield data[index]
+
 
 a = reverse('practice')
 for char in a:
     print(char)
-    
+
+
+
